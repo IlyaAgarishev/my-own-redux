@@ -3,8 +3,10 @@
 Things that has been implemented:
 
 - Reducer
-- createStore
+- CreateStore
 - Connector
 - Provider
+- Logger
+- Anti-Rerender logic (redux prevState and current state comparison)
 
 ![screenshot](https://i.imgur.com/nMGUQqA.png)
