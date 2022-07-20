@@ -20,6 +20,7 @@ export default function Connect(
         const prevState = mapStateToProps(this.state);
         const newState = mapStateToProps(reduxState);
 
+        // Anti-Rerender logic
         const stateHasBeenChanged = !isEqual(prevState, newState);
 
         if (stateHasBeenChanged) {
