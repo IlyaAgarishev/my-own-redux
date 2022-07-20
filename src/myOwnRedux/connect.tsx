@@ -16,7 +16,6 @@ export default function Connect(
       const certainState = mapStateToProps(store.getState());
       this.setState(certainState);
       store.subscribe((reduxState) => {
-        console.log({ reduxState });
         this.setState(mapStateToProps(reduxState));
       });
     }
