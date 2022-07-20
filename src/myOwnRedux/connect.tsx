@@ -1,17 +1,23 @@
 import React from "react";
 import { Context } from "./provider";
-import { Store } from "./types";
+import { IMapStateToProps, State, Store } from "./types";
 
-export default function Connect(Comp: React.FC<any>) {
+const defaultMapStateToProps: IMapStateToProps = (state) => state;
+
+export default function Connect(
+  Comp: React.FC<any>,
+  mapStateToProps: IMapStateToProps = defaultMapStateToProps
+) {
   return class extends React.Component {
     static contextType = Context;
 
     componentDidMount() {
       const store: Store = this.context as Store;
-      this.setState(store.getState());
+      const certainState = mapStateToProps(store.getState());
+      this.setState(certainState);
       store.subscribe((reduxState) => {
         console.log({ reduxState });
-        this.setState(reduxState);
+        this.setState(mapStateToProps(reduxState));
       });
     }
 

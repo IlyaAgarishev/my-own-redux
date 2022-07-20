@@ -26,3 +26,5 @@ export interface ProviderProps {
   store: Store;
   children: any;
 }
+
+export type IMapStateToProps = (state: State) => Partial<State>;
