@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import Store from "../../myOwnRedux/store";
 
 const HobbiesForm = () => {
@@ -10,12 +10,27 @@ const HobbiesForm = () => {
 
   const addHobby = () => {
     Store.dispatch({ type: "ADD_HOBBY", payload: value });
+    setValue("");
+  };
+
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      addHobby();
+    }
   };
 
   return (
     <span>
-      <input type="text" placeholder="Hobby" onChange={onValueChange} />
-      <button onClick={addHobby}>Add</button>
+      <input
+        type="text"
+        placeholder="Hobby"
+        value={value}
+        onChange={onValueChange}
+        onKeyDown={onKeyDown}
+      />
+      <button onClick={addHobby} type="button">
+        Add
+      </button>
     </span>
   );
 };

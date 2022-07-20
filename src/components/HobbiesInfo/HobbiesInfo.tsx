@@ -1,16 +1,23 @@
+import React from "react";
 import Connect from "../../myOwnRedux/connect";
 
-const HobbiesInfo = () => {
+interface IProps {
+  hobbies: string[];
+}
+
+const HobbiesInfo: React.FC<IProps> = ({ hobbies = [] }) => {
   return (
     <span>
       Hobbies list:
       <ul>
-        <li>Hobbie</li>
-        <li>Hobbie</li>
-        <li>Hobbie</li>
+        {hobbies.map((hobby, index) => (
+          <li key={index}>{hobby}</li>
+        ))}
       </ul>
     </span>
   );
 };
 
-export default Connect(HobbiesInfo);
+export default Connect(HobbiesInfo, ({ hobbies }) => ({
+  hobbies,
+}));

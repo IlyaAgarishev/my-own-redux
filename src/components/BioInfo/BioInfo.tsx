@@ -31,8 +31,8 @@ const BioForm: React.FC<IProps> = ({ name, age, weight }) => {
   );
 };
 
-export default Connect(BioForm, (state) => {
-  const { name, age, weight } = state;
-
-  return { name, age, weight };
-});
+export default Connect(BioForm, ({ name, age, weight }) => ({
+  name,
+  age,
+  weight,
+}));
