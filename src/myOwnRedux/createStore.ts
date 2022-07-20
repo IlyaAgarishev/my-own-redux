@@ -1,9 +1,9 @@
 import { Action, InitialState, ReducerType, State, Subscriber } from "./types";
 
 export default class CreateStore {
-  private subscribers: Array<Subscriber>;
-  private reducer: ReducerType;
-  private state: State;
+  public subscribers: Array<Subscriber>;
+  public reducer: ReducerType;
+  public state: State;
 
   constructor(reducer: ReducerType, initialState: InitialState = {}) {
     this.subscribers = [];

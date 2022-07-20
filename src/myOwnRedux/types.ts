@@ -17,6 +17,9 @@ export interface Store {
   subscribers: Array<Subscriber>;
   reducer: ReducerType;
   state: State;
+  getState: () => State;
+  subscribe: (subscriber: Subscriber) => void;
+  dispatch: (action: Action) => void;
 }
 
 export interface ProviderProps {

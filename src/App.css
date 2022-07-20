@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+}
+
+.App span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 30px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.App span div,
+input {
+  margin-bottom: 5px;
+}

@@ -1,8 +1,47 @@
 import React from "react";
+import "./App.css";
+import Connect from "./myOwnRedux/connect";
 import Store from "./myOwnRedux/store";
 
-function App() {
-  return <div>counter</div>;
+interface IProps {
+  name: string | null;
+  age: number | null;
+  weight: number | null;
 }
 
-export default App;
+const App: React.FC<IProps> = ({ name, age, weight }) => {
+  const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    Store.dispatch({ type: "CHANGE_NAME", payload: e.target.value });
+  };
+
+  const onAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    Store.dispatch({ type: "CHANGE_AGE", payload: e.target.value });
+  };
+
+  const onWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    Store.dispatch({ type: "CHANGE_WEIGHT", payload: e.target.value });
+  };
+
+  return (
+    <span className="App">
+      <span>
+        <input type="text" placeholder="Name" onChange={onNameChange} />
+        <input type="number" placeholder="Age" onChange={onAgeChange} />
+        <input type="number" placeholder="Weight" onChange={onWeightChange} />
+      </span>
+      <span>
+        <div>
+          <label>Name: {name}</label>
+        </div>
+        <div>
+          <label>Age: {age} </label>
+        </div>
+        <div>
+          <label>Weight:{weight} </label>
+        </div>
+      </span>
+    </span>
+  );
+};
+
+export default Connect(App);
