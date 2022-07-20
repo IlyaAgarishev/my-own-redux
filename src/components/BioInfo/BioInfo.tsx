@@ -1,12 +1,13 @@
 import Connect from "../../myOwnRedux/connect";
+import useSelector from "../../myOwnRedux/useSelector";
 
-interface IProps {
-  name: string | null;
-  age: number | null;
-  weight: number | null;
-}
+const BioForm: React.FC = () => {
+  const { name, age, weight } = useSelector(({ name, age, weight }) => ({
+    name,
+    age,
+    weight,
+  }));
 
-const BioForm: React.FC<IProps> = ({ name, age, weight }) => {
   return (
     <span>
       <div>
@@ -31,8 +32,4 @@ const BioForm: React.FC<IProps> = ({ name, age, weight }) => {
   );
 };
 
-export default Connect(BioForm, ({ name, age, weight }) => ({
-  name,
-  age,
-  weight,
-}));
+export default BioForm;

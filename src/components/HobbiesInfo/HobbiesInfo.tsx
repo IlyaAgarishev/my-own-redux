@@ -1,8 +1,7 @@
-import React from "react";
 import useSelector from "../../myOwnRedux/useSelector";
 
 const HobbiesInfo = () => {
-  const hobbies = useSelector(({ hobbies }) => hobbies) || [];
+  const hobbies = useSelector(({ hobbies }) => hobbies);
 
   return (
     <span>
