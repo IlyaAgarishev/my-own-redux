@@ -1,12 +1,18 @@
 .App {
   display: flex;
+  flex-direction: column;
 }
 
-.App span {
+.block {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.block span {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 30px;
+  margin-right: 10px;
   padding: 10px;
   border: 1px solid black;
 }

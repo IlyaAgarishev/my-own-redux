@@ -1,4 +1,3 @@
-import Connect from "../../myOwnRedux/connect";
 import Store from "../../myOwnRedux/store";
 
 const BioForm = () => {
@@ -23,4 +22,4 @@ const BioForm = () => {
   );
 };
 
-export default Connect(BioForm);
+export default BioForm;
