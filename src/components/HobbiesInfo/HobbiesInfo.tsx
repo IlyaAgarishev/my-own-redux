@@ -1,23 +1,20 @@
 import React from "react";
-import Connect from "../../myOwnRedux/connect";
+import useSelector from "../../myOwnRedux/useSelector";
 
-interface IProps {
-  hobbies: string[];
-}
+const HobbiesInfo = () => {
+  const hobbies = useSelector(({ hobbies }) => hobbies) || [];
 
-const HobbiesInfo: React.FC<IProps> = ({ hobbies = [] }) => {
   return (
     <span>
       Hobbies list:
       <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>{hobby}</li>
-        ))}
+        {Array.isArray(hobbies) &&
+          hobbies.map((hobby: any, index: number) => (
+            <li key={index}>{hobby}</li>
+          ))}
       </ul>
     </span>
   );
 };
 
-export default Connect(HobbiesInfo, ({ hobbies }) => ({
-  hobbies,
-}));
+export default HobbiesInfo;
