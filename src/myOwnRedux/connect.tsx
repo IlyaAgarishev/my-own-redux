@@ -1,6 +1,7 @@
 import React from "react";
 import { Context } from "./provider";
 import { IMapStateToProps, Store } from "./types";
+import { isEqual } from "lodash";
 
 const defaultMapStateToProps: IMapStateToProps = (state) => state;
 
@@ -16,7 +17,14 @@ export default function Connect(
       const certainState = mapStateToProps(store.getState());
       this.setState(certainState);
       store.subscribe((reduxState) => {
-        this.setState(mapStateToProps(reduxState));
+        const prevState = mapStateToProps(this.state);
+        const newState = mapStateToProps(reduxState);
+
+        const stateHasBeenChanged = !isEqual(prevState, newState);
+
+        if (stateHasBeenChanged) {
+          this.setState(mapStateToProps(reduxState));
+        }
       });
     }
 
