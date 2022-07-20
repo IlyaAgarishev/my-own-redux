@@ -21,3 +21,16 @@
 input {
   margin-bottom: 5px;
 }
+
+ul {
+  display: flex;
+  padding-inline-start: 0px;
+}
+
+ul li {
+  margin: 0;
+  list-style-type: none;
+  padding: 2px 5px;
+  border: 1px solid green;
+  margin-right: 5px;
+}
