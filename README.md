@@ -1,1 +1,1 @@
-My redux implementation with typescript
+My own redux implementation with typescript
