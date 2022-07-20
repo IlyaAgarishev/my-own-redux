@@ -12,3 +12,14 @@ export interface Action {
   type: string;
   payload: any;
 }
+
+export interface Store {
+  subscribers: Array<Subscriber>;
+  reducer: ReducerType;
+  state: State;
+}
+
+export interface ProviderProps {
+  store: Store;
+  children: any;
+}
