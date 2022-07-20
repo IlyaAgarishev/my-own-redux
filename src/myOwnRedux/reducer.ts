@@ -12,6 +12,13 @@ const Reducer: ReducerType = function (action, state) {
       return { ...state, name: action.payload };
     case "CHANGE_WEIGHT":
       return { ...state, weight: action.payload };
+
+    case "ADD_HOBBY": {
+      const { hobbies } = state;
+
+      return { ...state, hobbies: [...hobbies, action.payload] };
+    }
+
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Context } from "./provider";
-import { IMapStateToProps, State, Store } from "./types";
+import { IMapStateToProps, Store } from "./types";
 
 const defaultMapStateToProps: IMapStateToProps = (state) => state;
 
