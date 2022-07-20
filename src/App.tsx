@@ -31,13 +31,22 @@ const App: React.FC<IProps> = ({ name, age, weight }) => {
       </span>
       <span>
         <div>
-          <label>Name: {name}</label>
+          <label>
+            Name: <strong>{name}</strong>
+          </label>
         </div>
         <div>
-          <label>Age: {age} </label>
+          <label>
+            Age: <strong>{age}</strong>
+          </label>
         </div>
         <div>
-          <label>Weight:{weight} </label>
+          <label>
+            Weight:{" "}
+            <strong>
+              {weight} {weight && "kg"}
+            </strong>
+          </label>
         </div>
       </span>
     </span>
