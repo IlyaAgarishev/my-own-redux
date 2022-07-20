@@ -11,6 +11,7 @@ export default class CreateStore {
     this.state = initialState;
   }
 
+  // subscribe: ф-ия, которая просто принимает колбек(subscriber) и добавляет его в subscribers
   subscribe(subscriber: Subscriber) {
     this.subscribers.push(subscriber);
   }
