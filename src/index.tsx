@@ -10,8 +10,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={Store}>
-    <h1>Testing how the redux works</h1>
-    <h4 style={{ color: "green" }}>Check console to see redux state logger</h4>
+    <h1>Testing how my-own-redux works</h1>
+    <h4>
+      Check console to see redux state,{" "}
+      <span style={{ color: "green" }}>dispatch</span> and{" "}
+      <span style={{ color: "red" }}>re</span>-
+      <span style={{ color: "blue" }}>render</span> logger
+    </h4>
     <App />
   </Provider>
 );
