@@ -14,15 +14,15 @@ const useSelector = (selector: SelectorCallback) => {
     const certainState = selector(store.getState());
     setState(certainState);
 
-    store.subscribe((reduxState) => {
-      const prevState = selector(state);
-      const newState = selector(reduxState);
+    store.subscribe((previousState, currentState) => {
+      const prevState = selector(previousState);
+      const newState = selector(currentState);
 
       // Anti-Rerender logic
       const stateHasBeenChanged = !isEqual(prevState, newState);
 
       if (stateHasBeenChanged) {
-        setState(selector(reduxState));
+        setState(newState);
       }
     });
   }, []);

@@ -20,9 +20,13 @@ export default class CreateStore {
   dispatch(action: Action) {
     const prevState = this.state;
     const newState = this.reducer(action, this.state);
-    this.state = newState;
-    this.subscribers.forEach((subscriber) => subscriber(this.state));
 
+    this.state = newState;
+
+    // Передаем данные о состоянии подписчикам
+    this.subscribers.forEach((subscriber) => subscriber(prevState, newState));
+
+    // Логгируем предыдущее состояни и нынешнее
     logger(prevState, newState);
   }
 
