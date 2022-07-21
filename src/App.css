@@ -5,7 +5,7 @@
 
 .block {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .block span {
@@ -33,4 +33,13 @@ ul li {
   padding: 2px 5px;
   border: 1px solid green;
   margin-right: 5px;
+}
+
+.name {
+  position: absolute;
+  margin-left: -12px;
+  margin-top: -28px;
+  font-size: 12px;
+  color: white;
+  padding: 1px 3px;
 }

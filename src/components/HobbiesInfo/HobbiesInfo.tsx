@@ -4,7 +4,10 @@ const HobbiesInfo = () => {
   const hobbies = useSelector(({ hobbies }) => hobbies);
 
   return (
-    <span>
+    <span style={{ border: "2px solid red" }}>
+      <div className="name" style={{ background: "red" }}>
+        HobbiesInfo
+      </div>
       Hobbies list:
       <ul>
         {Array.isArray(hobbies) &&

@@ -9,7 +9,10 @@ const BioForm: React.FC = () => {
   }));
 
   return (
-    <span>
+    <span style={{ border: "2px solid blue" }}>
+      <div className="name" style={{ background: "blue" }}>
+        BioInfo
+      </div>
       <div>
         <label>
           Name: <strong>{name}</strong>
