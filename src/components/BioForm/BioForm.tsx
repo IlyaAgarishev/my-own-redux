@@ -1,16 +1,19 @@
 import Store from "../../myOwnRedux/store";
+import useDispatch from "../../myOwnRedux/useDispatch";
 
 const BioForm = () => {
+  const dispatch = useDispatch();
+
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    Store.dispatch({ type: "CHANGE_NAME", payload: e.target.value });
+    dispatch({ type: "CHANGE_NAME", payload: e.target.value });
   };
 
   const onAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    Store.dispatch({ type: "CHANGE_AGE", payload: e.target.value });
+    dispatch({ type: "CHANGE_AGE", payload: e.target.value });
   };
 
   const onWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    Store.dispatch({ type: "CHANGE_WEIGHT", payload: e.target.value });
+    dispatch({ type: "CHANGE_WEIGHT", payload: e.target.value });
   };
 
   return (

@@ -1,15 +1,17 @@
 import { KeyboardEvent, useState } from "react";
 import Store from "../../myOwnRedux/store";
+import useDispatch from "../../myOwnRedux/useDispatch";
 
 const HobbiesForm = () => {
   const [value, setValue] = useState("");
+  const dispatch = useDispatch();
 
   const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   const addHobby = () => {
-    Store.dispatch({ type: "ADD_HOBBY", payload: value });
+    dispatch({ type: "ADD_HOBBY", payload: value });
     setValue("");
   };
 
