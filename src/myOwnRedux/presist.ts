@@ -1,3 +1,4 @@
+import INITIAL_STATE from "./initialState";
 import { State } from "./types";
 
 class Persist {
@@ -12,7 +13,13 @@ class Persist {
   }
 
   get() {
-    return JSON.parse(localStorage.getItem(this.key) as string);
+    const localStorageStateString = localStorage.getItem(this.key);
+
+    if (localStorageStateString) {
+      return JSON.parse(localStorage.getItem(this.key) as string);
+    }
+
+    return INITIAL_STATE;
   }
 }
 

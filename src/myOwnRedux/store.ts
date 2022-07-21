@@ -1,9 +1,9 @@
 import CreateStore from "./createStore";
 import Reducer from "./reducer";
-import INITIAL_STATE from "./initialState";
 import presist from "./presist";
+import { getDefaultState } from "./utils";
 
-const Store = new CreateStore(Reducer, INITIAL_STATE);
+const Store = new CreateStore(Reducer, getDefaultState());
 
 presist.set(Store.getState());
 

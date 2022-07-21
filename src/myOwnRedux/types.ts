@@ -15,7 +15,7 @@ export type Subscriber = (prevState: State, newState: State) => void;
 
 export interface Action {
   type: string;
-  payload: any;
+  payload?: any;
 }
 
 export interface Store {

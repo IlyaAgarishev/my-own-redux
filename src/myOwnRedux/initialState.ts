@@ -8,6 +8,4 @@ const INITIAL_STATE: InitialState = {
   hobbies: ["breathing"],
 };
 
-const LocalStorageStateExists = presist.get();
-
-export default LocalStorageStateExists ?? INITIAL_STATE;
+export default INITIAL_STATE;
