@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import useSelector from "../../myOwnRedux/useSelector";
 
 const HobbiesInfo = () => {
   const hobbies = useSelector(({ hobbies }) => hobbies);
+
+  console.log(
+    `%cHobbiesInfo re-rendered`,
+    `background: red; color: white; padding: 2px 4px;`
+  );
 
   return (
     <span style={{ border: "2px solid red" }}>
@@ -11,7 +17,7 @@ const HobbiesInfo = () => {
       Hobbies list:
       <ul>
         {Array.isArray(hobbies) &&
-          hobbies.map((hobby: any, index: number) => (
+          hobbies.map((hobby: string, index: number) => (
             <li key={index}>{hobby}</li>
           ))}
       </ul>

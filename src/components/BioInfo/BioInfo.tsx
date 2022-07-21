@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Connect from "../../myOwnRedux/connect";
 import useSelector from "../../myOwnRedux/useSelector";
 
@@ -7,6 +8,11 @@ const BioForm: React.FC = () => {
     age,
     weight,
   }));
+
+  console.log(
+    `%cBioInfo re-rendered`,
+    `background: blue; color: white; padding: 2px 4px;`
+  );
 
   return (
     <span style={{ border: "2px solid blue" }}>
