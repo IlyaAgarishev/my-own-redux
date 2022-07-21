@@ -43,3 +43,13 @@ ul li {
   color: white;
   padding: 1px 3px;
 }
+
+a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 4px 5px;
+  margin: 20px;
+}
