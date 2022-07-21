@@ -10,4 +10,4 @@ Things that has been implemented:
 - Logger
 - Anti-Rerender logic (redux prevState and current state comparison)
 
-![screenshot](https://i.imgur.com/nMGUQqA.png)
+![screenshot](https://i.imgur.com/JZnIqvR.png)
