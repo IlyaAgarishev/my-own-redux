@@ -2,9 +2,9 @@
 
 Things that has been implemented:
 
+- useSelector
 - Reducer
 - CreateStore
-- Connector
 - Provider
 - Logger
 - Anti-Rerender logic (redux prevState and current state comparison)

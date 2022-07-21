@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useSelector from "../../myOwnRedux/useSelector";
 
 const BioForm: React.FC = () => {
