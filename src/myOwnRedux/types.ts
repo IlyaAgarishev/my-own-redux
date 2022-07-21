@@ -2,7 +2,12 @@ export type State = {
   [key: string]: any;
 };
 
-export type InitialState = State;
+export type InitialState = {
+  name: string | null;
+  age: number | null;
+  weight: number | null;
+  hobbies: string[];
+};
 
 export type ReducerType = (action: Action, state: State) => State;
 

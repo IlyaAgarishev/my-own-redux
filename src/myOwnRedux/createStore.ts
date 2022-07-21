@@ -6,7 +6,7 @@ export default class CreateStore {
   public reducer: ReducerType;
   public state: State;
 
-  constructor(reducer: ReducerType, initialState: InitialState = {}) {
+  constructor(reducer: ReducerType, initialState: InitialState) {
     this.subscribers = [];
     this.reducer = reducer;
     this.state = initialState;
