@@ -27,9 +27,4 @@ export interface Store {
   dispatch: (action: Action) => void;
 }
 
-export interface ProviderProps {
-  store: Store;
-  children: any;
-}
-
 export type IMapStateToProps = (state: State) => Partial<State>;

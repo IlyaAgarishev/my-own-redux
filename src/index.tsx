@@ -9,6 +9,8 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
+  // Передаем store в провайдер, так как нам нужен ф-ал react context, так как реакт понимает
+  // когда в нем происходят изменения, а мы на эти измения подписываемся.
   <Provider store={Store}>
     <App />
   </Provider>

@@ -7,20 +7,27 @@ type SelectorCallback = (state: State) => Partial<State>;
 
 const useSelector = (selector: SelectorCallback) => {
   const [state, setState] = useState<State>({});
-  const context = useContext(Context);
+  // Подписываемся на изменение контекста.
+  const context = useContext(Context) as Store;
 
   useEffect(() => {
-    const store: Store = context as Store;
-    const certainState = selector(store.getState());
-    setState(certainState);
+    const selectedState = selector(context.getState());
+    // Сразу сеттим акутальное выбранное(selected) состояние.
+    setState(selectedState);
 
-    store.subscribe((previousState, currentState) => {
+    // Подписываемся на изменения состояния.
+    context.subscribe((previousState, currentState) => {
       const prevState = selector(previousState);
       const newState = selector(currentState);
 
       // Anti-Rerender logic
       const stateHasBeenChanged = !isEqual(prevState, newState);
 
+      // Если выбранное(selected) пользователем состояние изменилось,
+      // то сеттим новый state. Если выбранное(selected) пользователем состояние НЕ изменилось, то ничего не
+      // делаем. Таким образом реализована Anti-Rerender logic. Состояние сеттиться не будет,
+      // соотвественно компонент, где вызван useSelect, не будет переренлериваться. Новый рендер
+      // будет происходить только тогда, когда изменилась конкретная выбранная ячейка.
       if (stateHasBeenChanged) {
         setState(newState);
       }

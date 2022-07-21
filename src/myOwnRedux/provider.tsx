@@ -1,5 +1,10 @@
-import React, { createContext } from "react";
-import { ProviderProps } from "./types";
+import { createContext } from "react";
+import { Store } from "./types";
+
+export interface ProviderProps {
+  store: Store;
+  children: any;
+}
 
 const Context = createContext({});
 

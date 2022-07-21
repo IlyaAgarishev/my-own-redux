@@ -8,6 +8,7 @@ export default class CreateStore {
   public state: State;
 
   constructor(reducer: ReducerType, initialState: InitialState) {
+    // subscribers - это просто список listeners которые слушают любое изменение state
     this.subscribers = [];
     this.reducer = reducer;
     this.state = initialState;

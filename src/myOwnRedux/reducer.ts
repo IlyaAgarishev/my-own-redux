@@ -1,10 +1,6 @@
 import initialState from "./initialState";
 import { ReducerType } from "./types";
 
-// Reducer - это протсо ф-ия, которая принимает текущее состояние(state) и action(который эммитит компонент) и
-// возвращает новый state. Затем это состояние заменяет исходное состояние хранилища.
-// Поэтому редакс не мутирует состояние, а возвращает его новые копии.
-
 const Reducer: ReducerType = function (action, state = initialState) {
   switch (action.type) {
     case "CHANGE_AGE":
