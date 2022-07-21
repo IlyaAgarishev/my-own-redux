@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.block:first-child {
+  margin-top: 10px;
+}
+
 .block {
   display: flex;
   margin-bottom: 40px;
