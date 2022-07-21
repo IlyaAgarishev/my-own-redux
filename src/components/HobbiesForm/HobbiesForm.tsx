@@ -1,6 +1,5 @@
 import { KeyboardEvent, useState } from "react";
-import Store from "../../myOwnRedux/store";
-import useDispatch from "../../myOwnRedux/useDispatch";
+import { useDispatch } from "../../myOwnRedux";
 
 const HobbiesForm = () => {
   const [value, setValue] = useState("");

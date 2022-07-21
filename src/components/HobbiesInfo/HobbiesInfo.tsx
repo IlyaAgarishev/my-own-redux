@@ -1,4 +1,4 @@
-import useSelector from "../../myOwnRedux/useSelector";
+import { useSelector } from "../../myOwnRedux";
 
 const HobbiesInfo = () => {
   const hobbies = useSelector(({ hobbies }) => hobbies);

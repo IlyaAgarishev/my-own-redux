@@ -1,4 +1,4 @@
-import useSelector from "../../myOwnRedux/useSelector";
+import { useSelector } from "../../myOwnRedux";
 
 const BioForm: React.FC = () => {
   const { name, age, weight } = useSelector(({ name, age, weight }) => ({

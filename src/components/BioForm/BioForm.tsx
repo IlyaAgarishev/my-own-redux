@@ -1,5 +1,4 @@
-import Store from "../../myOwnRedux/store";
-import useDispatch from "../../myOwnRedux/useDispatch";
+import { useDispatch } from "../../myOwnRedux";
 
 const BioForm = () => {
   const dispatch = useDispatch();
