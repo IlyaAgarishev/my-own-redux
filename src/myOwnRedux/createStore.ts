@@ -27,7 +27,7 @@ export default class CreateStore {
     this.subscribers.forEach((subscriber) => subscriber(prevState, newState));
 
     // Логгируем предыдущее состояни и нынешнее
-    logger(prevState, newState);
+    logger(prevState, newState, action);
   }
 
   getState() {
