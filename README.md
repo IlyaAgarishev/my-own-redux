@@ -2,11 +2,12 @@
 
 Things that has been implemented:
 
+- createStore
+- Provider
 - useSelector
 - useDispatch
 - Reducer
-- CreateStore
-- Provider
+- Persist
 - Logger
 - Anti-Rerender logic (redux prevState and current state comparison)
 
