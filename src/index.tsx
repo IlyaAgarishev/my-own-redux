@@ -9,13 +9,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <Provider store={Store}>
-      <h1>Testing how the redux works</h1>
-      <h4 style={{ color: "green" }}>
-        Check console to see redux state logger
-      </h4>
-      <App />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={Store}>
+    <h1>Testing how the redux works</h1>
+    <h4 style={{ color: "green" }}>Check console to see redux state logger</h4>
+    <App />
+  </Provider>
 );
