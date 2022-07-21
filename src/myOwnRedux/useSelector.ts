@@ -3,7 +3,7 @@ import { Context } from "./provider";
 import { State, Store } from "./types";
 import { isEqual } from "lodash";
 
-type SelectorCallback = (state: State) => any;
+type SelectorCallback = (state: State) => Partial<State>;
 
 const useSelector = (selector: SelectorCallback) => {
   const [state, setState] = useState<State>({});
