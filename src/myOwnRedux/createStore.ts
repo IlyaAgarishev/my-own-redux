@@ -1,4 +1,5 @@
 import logger from "./logger";
+import presist from "./presist";
 import { Action, InitialState, ReducerType, State, Subscriber } from "./types";
 
 export default class CreateStore {
@@ -25,6 +26,9 @@ export default class CreateStore {
 
     // Передаем данные о состоянии подписчикам
     this.subscribers.forEach((subscriber) => subscriber(prevState, newState));
+
+    // Добавляем в localStorage новый state
+    presist.set(newState);
 
     // Логгируем предыдущее состояни и нынешнее
     logger(prevState, newState, action);

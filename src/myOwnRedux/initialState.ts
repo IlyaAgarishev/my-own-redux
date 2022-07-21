@@ -1,3 +1,4 @@
+import presist from "./presist";
 import { InitialState } from "./types";
 
 const INITIAL_STATE: InitialState = {
@@ -7,4 +8,6 @@ const INITIAL_STATE: InitialState = {
   hobbies: ["breathing"],
 };
 
-export default INITIAL_STATE;
+const LocalStorageStateExists = presist.get();
+
+export default LocalStorageStateExists ?? INITIAL_STATE;
