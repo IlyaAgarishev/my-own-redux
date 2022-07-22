@@ -16,7 +16,7 @@ const useSelector = (selector: SelectorCallback) => {
     // Подписываемся на изменения состояния. Когда Store будет обновляться с помощью
     // экшенов, внутри ф-ии dispatch будут передаваться пердыдущее и актуальное состояние всем
     // слушателям.
-    store.subscribe((previousState, currentState) => {
+    const unsubscribe = store.subscribe((previousState, currentState) => {
       const prevState = selector(previousState);
       const newState = selector(currentState);
 
@@ -32,6 +32,11 @@ const useSelector = (selector: SelectorCallback) => {
         setState(newState);
       }
     });
+
+    return () => {
+      // Отписываемся от изменения состояние, когда происходит демонтирование компонента
+      unsubscribe();
+    };
   }, []);
 
   return state;

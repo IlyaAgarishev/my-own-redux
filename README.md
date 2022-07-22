@@ -2,7 +2,7 @@
 
 Things that has been implemented:
 
-- createStore
+- createStore(subscribe, unsubscribe, getState, dispatch)
 - useSelector
 - useDispatch
 - Reducer

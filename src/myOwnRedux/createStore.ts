@@ -17,6 +17,11 @@ export default class CreateStore {
   // subscribe: ф-ия, которая просто принимает колбек(subscriber) и добавляет его в subscribers
   subscribe(subscriber: Subscriber) {
     this.subscribers.push(subscriber);
+
+    // unsubscribe: удаляет подписчика
+    return () => {
+      this.subscribers = this.subscribers.filter((el) => el !== subscriber);
+    };
   }
 
   dispatch(action: Action) {
