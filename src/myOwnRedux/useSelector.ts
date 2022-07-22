@@ -15,7 +15,9 @@ const useSelector = (selector: SelectorCallback) => {
     // Сразу сеттим акутальное выбранное(selected) состояние.
     setState(selectedState);
 
-    // Подписываемся на изменения состояния.
+    // Подписываемся на изменения состояния. Когда Store будет обновляться с помощью
+    // экшенов, внутри ф-ии dispatch будут передаваться пердыдущее и актуальное состояние всем
+    // слушателям.
     context.subscribe((previousState, currentState) => {
       const prevState = selector(previousState);
       const newState = selector(currentState);
