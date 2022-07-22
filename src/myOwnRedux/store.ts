@@ -3,8 +3,8 @@ import Reducer from "./reducer";
 import presist from "./presist";
 import { getDefaultState } from "./utils";
 
-const Store = new CreateStore(Reducer, getDefaultState());
+const store = new CreateStore(Reducer, getDefaultState());
 
-presist.set(Store.getState());
+presist.set(store.getState());
 
-export default Store;
+export default store;
