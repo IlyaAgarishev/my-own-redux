@@ -1,24 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import { Context } from "./provider";
-import { State, Store } from "./types";
+import { useEffect, useState } from "react";
+import { State } from "./types";
 import { isEqual } from "lodash";
+import store from "./store";
 
 type SelectorCallback = (state: State) => Partial<State>;
 
 const useSelector = (selector: SelectorCallback) => {
   const [state, setState] = useState<State>({});
-  // Подписываемся на изменение контекста.
-  const context = useContext(Context) as Store;
 
   useEffect(() => {
-    const selectedState = selector(context.getState());
+    const selectedState = selector(store.getState());
     // Сразу сеттим акутальное выбранное(selected) состояние.
     setState(selectedState);
 
     // Подписываемся на изменения состояния. Когда Store будет обновляться с помощью
     // экшенов, внутри ф-ии dispatch будут передаваться пердыдущее и актуальное состояние всем
     // слушателям.
-    context.subscribe((previousState, currentState) => {
+    store.subscribe((previousState, currentState) => {
       const prevState = selector(previousState);
       const newState = selector(currentState);
 

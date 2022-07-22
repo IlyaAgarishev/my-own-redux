@@ -1,4 +1,3 @@
-import { useContext, useEffect, useState } from "react";
 import store from "./store";
 import { Action } from "./types";
 

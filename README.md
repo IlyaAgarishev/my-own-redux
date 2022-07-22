@@ -3,7 +3,6 @@
 Things that has been implemented:
 
 - createStore
-- Provider
 - useSelector
 - useDispatch
 - Reducer
