@@ -5,9 +5,9 @@ Things that has been implemented:
 - createStore(subscribe, unsubscribe, getState, dispatch)
 - useSelector
 - useDispatch
-- Reducer
-- Persist
-- Logger
-- Anti-Rerender logic (redux prevState and current state comparison)
+- reducer
+- persist
+- logger
+- Anti-rerender logic (redux prevState and current state comparison)
 
 ![screenshot](https://i.imgur.com/JZnIqvR.png)

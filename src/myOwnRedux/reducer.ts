@@ -1,7 +1,7 @@
 import initialState from "./initialState";
 import { ReducerType } from "./types";
 
-const Reducer: ReducerType = function (action, state = initialState) {
+const reducer: ReducerType = function (action, state = initialState) {
   switch (action.type) {
     case "CHANGE_AGE":
       return { ...state, age: action.payload };
@@ -22,4 +22,4 @@ const Reducer: ReducerType = function (action, state = initialState) {
   }
 };
 
-export default Reducer;
+export default reducer;

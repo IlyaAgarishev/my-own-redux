@@ -1,9 +1,9 @@
 import CreateStore from "./createStore";
-import Reducer from "./reducer";
+import reducer from "./reducer";
 import presist from "./presist";
 import { getDefaultState } from "./utils";
 
-const store = new CreateStore(Reducer, getDefaultState());
+const store = new CreateStore(reducer, getDefaultState());
 
 // Сохраняем state в localStorage
 presist.set(store.getState());
