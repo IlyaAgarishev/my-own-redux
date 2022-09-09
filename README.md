@@ -1,3 +1,5 @@
+![logo](https://i.imgur.com/4Sre3gG.png)
+
 # My own redux implementation with typescript
 ### See demo: https://my-own-redux.netlify.app/
 
