@@ -19,7 +19,7 @@ My own redux implementation with typescript. Integrated this technology into rea
 ![screenshot](https://i.imgur.com/JZnIqvR.png)
 
 ### How it works
-Store is created by `createStore` function. Store is state keeper. `useSelector` is used to subscribe on store to see state changes. If required state field is changed, react component where `useSelector` is called will be re-render. You can find all this custom redux logic in `myOwnRedux` folder.
+Store is created by `createStore` function. Store is a state keeper. `useSelector` is used to subscribe on store to see state changes. If required state field is changed, react component where `useSelector` is called will be re-render. You can find all this custom redux logic in `myOwnRedux` folder.
 
 This is how  `useSelector` logic looks like:
 ```javascript
