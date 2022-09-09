@@ -4,7 +4,7 @@
 ### See demo: https://my-own-redux.netlify.app/
 
 ### About
-My own redux implementation with typescript. Integrated this technology in react app to show how it works in real simple project. 
+My own redux implementation with typescript. Integrated this technology into react app to show how it works in real project. 
 
 ### Things that has been implemented:
 
@@ -15,5 +15,8 @@ My own redux implementation with typescript. Integrated this technology in react
 - persist
 - logger
 - Anti-rerender logic (redux prevState and current state comparison)
+
+### How it works:
+- so..
 
 ![screenshot](https://i.imgur.com/JZnIqvR.png)
