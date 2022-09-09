@@ -48,3 +48,11 @@ const useSelector = (selector: SelectorCallback) => {
   return state;
 };
 ```
+
+### How to start locally
+1.  `npm install` - install all dependencies
+2.  `npm start` - start a project
+
+### Technologies used
+- React
+- Typescript
